@@ -19,9 +19,11 @@ a is the aspect ratio of the tire, and
 d is the diameter of the wheel in inches.
 """
 
+from datetime import datetime
 
 # and math.sqrt
 import math
+
 
 # The following is a brief program description for the user.
 print('This program reads from the keyboard three numbers for a tire')
@@ -35,5 +37,24 @@ diameter =float(input('Enter diameter of the wheel in inches: '))
 #computer the volume of the tire based on size
 volume = (((math.pi)*((width**2)*aspect_ratio))*(width*aspect_ratio + (2540*diameter)))/10000000000
 #round volume litres into one decimal point
+"""
+Gets the current date from the computer's operating system.
+Opens a text file named volumes.txt for appending.
+Appends to the end of the volumes.txt file one line of text that contains the following five values:
+current date
+width of the tire
+aspect ratio of the tire
+diameter of the wheel
+volume of the tire
 
+"""
 print(f'volume is {volume:.2f} litres')
+
+with open("volume.txt", "at") as volume_file:
+    current_date =datetime.now()
+
+    # Print a city's name and information to the file.
+    
+    print(f"{current_date:%Y-%m-%d}, {width }, {aspect_ratio}, {diameter},{volume}",file=volume_file)
+
+    
