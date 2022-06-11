@@ -19,9 +19,10 @@ if subtotal >= 50:
         discount_amount = subtotal*.1
         print(f'The discount is: ${discount_amount:.2f}')
         subtotal= subtotal-discount_amount
-        
+
 sales_tax = subtotal *.06
 total_amount = subtotal + sales_tax
 print(f'The sales tax amount is: ${sales_tax:.2f}')
 print(f'The total amount is:${total_amount:.2f}')
+#print(day_of_week)
 
